@@ -1,0 +1,6 @@
+vendor/
+secure/*
+!secure/.htaccess
+.env
+*.log
+Thumbs.db
