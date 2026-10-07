@@ -2,7 +2,7 @@
 
 The PHP/MySQL backend for the shared to-do list. It handles registration, login and sessions, then signs the user into the React app by creating a Firebase custom token.
 
-This is the **backend** repo. The to-do app itself lives in a separate repo: (https://github.com/Nathangotopps/todolist-backend).
+This is the **backend** repo. The to-do app itself lives in a separate repo: (https://github.com/Nathangotopps/todolist-frontend).
 
 ## What it does
 
