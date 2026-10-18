@@ -26,5 +26,6 @@ require_once 'theme_config.php';
        text-decoration: none; border-radius: 4px; cursor: pointer; font-family: Arial, sans-serif;">
         Log In Again
     </a>
+<?php theme_switcher(); ?>
 </body>
 </html>

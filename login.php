@@ -209,6 +209,7 @@ if ($stmt->fetch()) {
         }
     });
     </script>
+<?php theme_switcher(); ?>
 </body>
 
 </html>

@@ -269,5 +269,6 @@ regToggleBtn.addEventListener('click', function() {
     }
 });
 </script>
+<?php theme_switcher(); ?>
 </body>
 </html>
