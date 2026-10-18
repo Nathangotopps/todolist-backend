@@ -4,6 +4,14 @@ The PHP/MySQL backend for the shared to-do list. It handles registration, login 
 
 This is the **backend** repo. The to-do app itself lives in a separate repo: (https://github.com/Nathangotopps/todolist-frontend).
 
+**Live demo:** https://yoyin-todo.xo.je (frontend: https://github.com/Nathangotopps/todolist-frontend).
+The backend is hosted on InfinityFree's free plan (PHP 8.4, MySQL).
+
+### Known limitations
+
+- No password reset (free hosting has no outgoing email).
+- Free-tier hosting means limited daily requests and occasional slowness.
+
 ## What it does
 
 - Registration (`index.php`, `process.php`): stores students in MySQL with hashed passwords (`password_hash`)
