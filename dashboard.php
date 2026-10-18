@@ -99,6 +99,7 @@ $firebaseToken = $firebaseAuth->createCustomToken((string) $current_user_id)->to
             <li>"Waltz Primordial" by Kevin MacLeod (incompetech.com), CC BY 4.0</li>
             <li>"Wallpaper" by Kevin MacLeod (incompetech.com), CC BY 4.0</li>
             <li>"Deliberate Thought" by Kevin MacLeod (incompetech.com), CC BY 4.0</li>
+            <li>Photo: "Nikola Tesla, with his equipment" (edited), Dickenson V. Alley, 1901, via Wikimedia Commons / Wellcome Collection, CC BY 4.0</li>
         </ul>
         <p style="text-align:center;"><a href="https://creativecommons.org/licenses/by/4.0/" style="color:#ffcc00;">creativecommons.org/licenses/by/4.0</a> &middot; <a href="https://creativecommons.org/licenses/by/3.0/" style="color:#ffcc00;">by/3.0</a></p>
     </details>
