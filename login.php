@@ -161,37 +161,37 @@ if ($stmt->fetch()) {
 
   </style>
 </head>
-<body style="background-color: #121212; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; font-family: Arial, sans-serif;">
+<body style="background-color: <?= $theme['bg'] ?>; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; font-family: Arial, sans-serif; color: <?= $theme['page_text'] ?>;">
 
     <!-- The Theme 1 Card Container Card -->
-    <div style="max-width: 400px; width: 90%; padding: 40px 30px; background-color: rgba(24, 24, 24, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); text-align: center; box-sizing: border-box;">
+    <div style="max-width: 400px; width: 90%; padding: 40px 30px; background-color: <?= $theme['card'] ?>; color: <?= $theme['text'] ?>; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid <?= $theme['border'] ?>; border-radius: 12px; box-shadow: 0 10px 30px <?= $theme['shadow'] ?>; text-align: center; box-sizing: border-box;">
         
-        <h2 style="color: #ffffff; margin-top: 0; margin-bottom: 25px; font-size: 28px; font-weight: bold; letter-spacing: 0.5px;">Welcome Back!</h2>
+        <h2 style="color: <?= $theme['text'] ?>; margin-top: 0; margin-bottom: 25px; font-size: 28px; font-weight: bold; letter-spacing: 0.5px;">Welcome Back!</h2>
 
         <form action="login.php" method="post" style="text-align: left;">
             
-            <h4 style="color: #ffffff; margin: 0 0 8px 0; font-size: 14px; font-weight: normal;">Email Address:</h4>
-            <input type="email" name="email" required style="width: 100%; padding: 12px 16px; margin-bottom: 20px; background-color: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; color: #fff; font-size: 16px; outline: none; box-sizing: border-box;">
+            <h4 style="color: <?= $theme['text'] ?>; margin: 0 0 8px 0; font-size: 14px; font-weight: normal;">Email Address:</h4>
+            <input type="email" name="email" required style="width: 100%; padding: 12px 16px; margin-bottom: 20px; background-color: <?= $theme['input_bg'] ?>; border: 1px solid <?= $theme['input_border'] ?>; border-radius: 6px; color: <?= $theme['text'] ?>; font-size: 16px; outline: none; box-sizing: border-box;">
 
-            <h4 style="color: #ffffff; margin: 0 0 8px 0; font-size: 14px; font-weight: normal;">Password:</h4>
+            <h4 style="color: <?= $theme['text'] ?>; margin: 0 0 8px 0; font-size: 14px; font-weight: normal;">Password:</h4>
             <div style="display: flex; gap: 10px; width: 100%; align-items: center; margin-bottom: 25px; box-sizing: border-box;">
-                <input type="password" id="loginPassword" name="password" required style="flex: 1; padding: 12px 16px; background-color: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; color: #fff; font-size: 16px; outline: none; box-sizing: border-box;">
-                <button type="button" id="loginToggleBtn" style="padding: 12px 16px; font-size: 14px; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; background: rgba(255,255,255,0.1); color: #ffffff; cursor: pointer; white-space: nowrap;">Show</button>
+                <input type="password" id="loginPassword" name="password" required style="flex: 1; padding: 12px 16px; background-color: <?= $theme['input_bg'] ?>; border: 1px solid <?= $theme['input_border'] ?>; border-radius: 6px; color: <?= $theme['text'] ?>; font-size: 16px; outline: none; box-sizing: border-box;">
+                <button type="button" id="loginToggleBtn" style="padding: 12px 16px; font-size: 14px; border: 1px solid <?= $theme['input_border'] ?>; border-radius: 6px; background: <?= $theme['soft_bg'] ?>; color: <?= $theme['text'] ?>; cursor: pointer; white-space: nowrap;">Show</button>
             </div>
 
             <!-- The Primary Save Point Gold Action Button -->
-            <button type="submit" style="width: 100%; background-color: #ffcc00; color: #121212; padding: 14px; font-size: 16px; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.2s; box-sizing: border-box;">
+            <button type="submit" style="width: 100%; background-color: <?= $theme['accent'] ?>; color: <?= $theme['button_text'] ?>; padding: 14px; font-size: 16px; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.2s; box-sizing: border-box;">
                 Log In
             </button>
 
             <!-- Incognito Guest Action Button -->
-            <button type="submit" name="guest_login" formnovalidate style="width: 100%; background-color: rgba(255,255,255,0.1); color: #ffffff; padding: 14px; font-size: 16px; font-weight: bold; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; cursor: pointer; margin-top: 12px; transition: background-color 0.2s; box-sizing: border-box;">
+            <button type="submit" name="guest_login" formnovalidate style="width: 100%; background-color: <?= $theme['soft_bg'] ?>; color: <?= $theme['text'] ?>; padding: 14px; font-size: 16px; font-weight: bold; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; cursor: pointer; margin-top: 12px; transition: background-color 0.2s; box-sizing: border-box;">
                 Try as Anonymous Guest 
             </button>
         </form>
 
-        <h4 style="color: #aaaaaa; margin-top: 30px; margin-bottom: 10px; font-size: 14px; font-weight: normal;">You don't have an account?</h4>
-        <a href="index.php" style="color: #ffcc00; text-decoration: none; font-weight: bold; font-size: 15px;">Register Now!</a>
+        <h4 style="color: <?= $theme['sub'] ?>; margin-top: 30px; margin-bottom: 10px; font-size: 14px; font-weight: normal;">You don't have an account?</h4>
+        <a href="index.php" style="color: <?= $theme['accent'] ?>; text-decoration: none; font-weight: bold; font-size: 15px;">Register Now!</a>
     </div>
 
     <!-- Inject your existing login scripts right below -->

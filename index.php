@@ -80,30 +80,30 @@ if(isset($_SESSION['user_id'])){
     }
   </style>
 </head>
-<body style="background-color: #121212; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; font-family: Arial, sans-serif; color: #ffffff;">
+<body style="background-color: <?= $theme['bg'] ?>; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; font-family: Arial, sans-serif; color: <?= $theme['page_text'] ?>;">
 
     <!-- Registration Card Matrix Frame Box Container -->
-    <div style="max-width: 480px; width: 95%; padding: 40px 30px; background-color: rgba(24, 24, 24, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); box-sizing: border-box; margin: 40px 0;">
+    <div style="max-width: 480px; width: 95%; padding: 40px 30px; background-color: <?= $theme['card'] ?>; color: <?= $theme['text'] ?>; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid <?= $theme['border'] ?>; border-radius: 12px; box-shadow: 0 10px 30px <?= $theme['shadow'] ?>; box-sizing: border-box; margin: 40px 0;">
         
-        <h2 style="color: #ffffff; margin-top: 0; margin-bottom: 25px; font-size: 26px; font-weight: bold; text-align: center;">AiOTDL Registration Form</h2>
+        <h2 style="color: <?= $theme['text'] ?>; margin-top: 0; margin-bottom: 25px; font-size: 26px; font-weight: bold; text-align: center;">AiOTDL Registration Form</h2>
 
         <form action="process.php" method="post" style="text-align: left;">
-            <h4 style="color: #ffffff; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Full Name:</h4>
-            <input type="text" name="name" style="width: 100%; padding: 12px; background-color: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; color: #fff; font-size: 16px; outline: none; box-sizing: border-box; margin-bottom: 15px;">
+            <h4 style="color: <?= $theme['text'] ?>; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Full Name:</h4>
+            <input type="text" name="name" style="width: 100%; padding: 12px; background-color: <?= $theme['input_bg'] ?>; border: 1px solid <?= $theme['input_border'] ?>; border-radius: 6px; color: <?= $theme['text'] ?>; font-size: 16px; outline: none; box-sizing: border-box; margin-bottom: 15px;">
 
-            <h4 style="color: #ffffff; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Email Address:</h4>
-            <input type="email" name="email" style="width: 100%; padding: 12px; background-color: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; color: #fff; font-size: 16px; outline: none; box-sizing: border-box; margin-bottom: 15px;">
+            <h4 style="color: <?= $theme['text'] ?>; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Email Address:</h4>
+            <input type="email" name="email" style="width: 100%; padding: 12px; background-color: <?= $theme['input_bg'] ?>; border: 1px solid <?= $theme['input_border'] ?>; border-radius: 6px; color: <?= $theme['text'] ?>; font-size: 16px; outline: none; box-sizing: border-box; margin-bottom: 15px;">
 
-            <h4 style="color: #ffffff; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Phone Number:</h4>
-            <input type="tel" name="phone_number" style="width: 100%; padding: 12px; background-color: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; color: #fff; font-size: 16px; outline: none; box-sizing: border-box; margin-bottom: 15px;">
+            <h4 style="color: <?= $theme['text'] ?>; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Phone Number:</h4>
+            <input type="tel" name="phone_number" style="width: 100%; padding: 12px; background-color: <?= $theme['input_bg'] ?>; border: 1px solid <?= $theme['input_border'] ?>; border-radius: 6px; color: <?= $theme['text'] ?>; font-size: 16px; outline: none; box-sizing: border-box; margin-bottom: 15px;">
 
             <div style="display: flex; gap: 15px; margin-bottom: 15px;">
                 <div style="flex: 1;">
-                    <h4 style="color: #ffffff; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Age:</h4>
-                    <input type="number" name="age" style="width: 100%; padding: 12px; background-color: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; color: #fff; font-size: 16px; outline: none; box-sizing: border-box;">
+                    <h4 style="color: <?= $theme['text'] ?>; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Age:</h4>
+                    <input type="number" name="age" style="width: 100%; padding: 12px; background-color: <?= $theme['input_bg'] ?>; border: 1px solid <?= $theme['input_border'] ?>; border-radius: 6px; color: <?= $theme['text'] ?>; font-size: 16px; outline: none; box-sizing: border-box;">
                 </div>
                 <div style="flex: 1.5; text-align: left;">
-                    <h4 style="color: #ffffff; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Gender:</h4>
+                    <h4 style="color: <?= $theme['text'] ?>; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Gender:</h4>
                     <div style="display: flex; gap: 10px; align-items: center; margin-top: 12px;">
                         <input type="radio" id="male" name="gender" value="male"><label for="male" style="font-size:14px; cursor:pointer;">Male</label>
                         <input type="radio" id="female" name="gender" value="female"><label for="female" style="font-size:14px; cursor:pointer;">Female</label>
@@ -112,20 +112,20 @@ if(isset($_SESSION['user_id'])){
                 </div>
             </div>
 
-            <h4 style="color: #ffffff; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Password:</h4>
+            <h4 style="color: <?= $theme['text'] ?>; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Password:</h4>
             <div style="display: flex; gap: 10px; width: 100%; align-items: center; margin-bottom: 25px; box-sizing: border-box;">
-                <input type="password" id="regPassword" name="password" style="flex: 1; padding: 12px; background-color: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; color: #fff; font-size: 16px; outline: none; box-sizing: border-box;">
-                <button type="button" id="regToggleBtn" style="padding: 12px; font-size: 14px; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; background: rgba(255,255,255,0.1); color: #fff; cursor: pointer; white-space: nowrap;">Show</button>
+                <input type="password" id="regPassword" name="password" style="flex: 1; padding: 12px; background-color: <?= $theme['input_bg'] ?>; border: 1px solid <?= $theme['input_border'] ?>; border-radius: 6px; color: <?= $theme['text'] ?>; font-size: 16px; outline: none; box-sizing: border-box;">
+                <button type="button" id="regToggleBtn" style="padding: 12px; font-size: 14px; border: 1px solid <?= $theme['input_border'] ?>; border-radius: 6px; background: <?= $theme['soft_bg'] ?>; color: <?= $theme['text'] ?>; cursor: pointer; white-space: nowrap;">Show</button>
             </div>
 
-            <button type="submit" style="width: 100%; background-color: #ffcc00; color: #121212; padding: 14px; font-size: 16px; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; box-sizing: border-box;">
+            <button type="submit" style="width: 100%; background-color: <?= $theme['accent'] ?>; color: <?= $theme['button_text'] ?>; padding: 14px; font-size: 16px; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; box-sizing: border-box;">
                 Submit Registration
             </button>
         </form>
 
         <div style="text-align: center; margin-top: 25px;">
-            <h4 style="color: #aaaaaa; margin: 0 0 8px 0; font-size: 14px; font-weight: normal;">Already have an account?</h4>
-            <a href="login.php" style="color: #ffcc00; text-decoration: none; font-weight: bold; font-size: 15px;">Log In here</a>
+            <h4 style="color: <?= $theme['sub'] ?>; margin: 0 0 8px 0; font-size: 14px; font-weight: normal;">Already have an account?</h4>
+            <a href="login.php" style="color: <?= $theme['accent'] ?>; text-decoration: none; font-weight: bold; font-size: 15px;">Log In here</a>
         </div>
     </div>
 
@@ -142,7 +142,7 @@ if (isset($_SESSION['success'])) {
 <!-- Page Entry Welcome Screen Overlay -->
 <div id="regOverlay" style="
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); display: flex; 
+    background-color: <?= $theme['overlay'] ?>; display: flex; 
     flex-direction: column; justify-content: center; align-items: center;
     z-index: 9999; color: white; font-family: sans-serif;
     transition: opacity 1s ease; opacity: 1; 
@@ -151,7 +151,7 @@ if (isset($_SESSION['success'])) {
         <h2 style="margin-bottom: 20px;">Welcome to Your All-In-One To-Do List!</h2>
         <p style="margin-bottom: 30px; color: #ccc;">Click below to begin your registration.</p>
         <button id="regEnterBtn" style="
-            background-color: #007; color: white; border: none;
+            background-color: <?= $theme['enter_bg'] ?>; color: <?= $theme['enter_text'] ?>; border: none;
             padding: 15px 40px; font-size: 18px; font-weight: bold;
             border-radius: 6px; cursor: pointer; transition: transform 0.2s;
         ">Register Now</button>

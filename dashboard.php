@@ -37,39 +37,39 @@ $firebaseToken = $firebaseAuth->createCustomToken((string) $current_user_id)->to
     <title>Dashboard - Choose Category</title>
  <style>
      body {
-        background-color: #121212;
-        color: #ffffff;
+        background-color: <?= $theme['bg'] ?>;
+        color: <?= $theme['page_text'] ?>;
         font-family: Arial, Helvetica, sans-serif !important;
         margin: 0; padding: 40px;
         text-align: center;
     }
-    h1 { color: #ffffff; margin-bottom: 10px; }
-    p { color: #aaaaaa; margin-bottom: 40px; }
+    h1 { color: <?= $theme['page_text'] ?>; margin-bottom: 10px; }
+    p { color: <?= $theme['page_sub'] ?>; margin-bottom: 40px; }
     
     .dashboard-container { display: flex; gap: 25px; padding: 20px; justify-content: center; flex-wrap: wrap; }
     
     .category-card {
         padding: 35px 25px; 
-        border: 1px solid rgba(255, 255, 255, 0.12); 
+        border: 1px solid <?= $theme['border'] ?>; 
         border-radius: 12px;
         text-decoration: none; 
-        color: #ffffff; 
+        color: <?= $theme['text'] ?>; 
         font-weight: bold; 
         text-align: center;
         width: 180px; 
-        background-color: rgba(24, 24, 24, 0.8);
+        background-color: <?= $theme['card'] ?>;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        box-shadow: 0 8px 24px <?= $theme['shadow'] ?>;
         transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
     }
     
-    /* Save Point Gold outline triggers smoothly upon card hovers! */
+    /* Accent-coloured outline triggers smoothly upon card hovers! */
     .category-card:hover { 
         transform: scale(1.05); 
-        background-color: rgba(35, 35, 35, 0.9); 
-        border-color: #ffcc00; 
-        color: #ffcc00;
+        background-color: <?= $theme['card_hover'] ?>; 
+        border-color: <?= $theme['accent'] ?>; 
+        color: <?= $theme['accent'] ?>;
     }
 
  </style>   
@@ -87,11 +87,11 @@ $firebaseToken = $firebaseAuth->createCustomToken((string) $current_user_id)->to
         <a href="<?php echo htmlspecialchars($reactAppUrl); ?>/?token=<?php echo urlencode($firebaseToken); ?>&category=personal/miscellaneous&theme=<?php echo $active_theme; ?>" class="category-card nav-link">🏠 Personal</a>
     </div>
 
-    <a href="logout.php" class="logout-link" style="display:inline-block; margin-top: 20px; color:#c00; justify-content: center; align-items: center;">Log out safely.</a>
+    <a href="logout.php" class="logout-link" style="display:inline-block; margin-top: 20px; color:<?= $theme['logout'] ?>; justify-content: center; align-items: center;">Log out safely.</a>
 
     <!-- Music credits (required by Creative Commons Attribution licensing) -->
-    <details style="max-width: 480px; margin: 30px auto 0 auto; color: #888; font-size: 13px; text-align: left;">
-        <summary style="cursor: pointer; color: #aaa; text-align: center;">🎵 Music credits</summary>
+    <details style="max-width: 480px; margin: 30px auto 0 auto; color: <?= $theme['page_sub'] ?>; font-size: 13px; text-align: left;">
+        <summary style="cursor: pointer; color: <?= $theme['page_sub'] ?>; text-align: center;">🎵 Music credits</summary>
         <ul style="line-height: 1.7; padding-left: 20px;">
             <li>"Canon in D Major" by Kevin MacLeod (incompetech.com), CC BY 4.0</li>
             <li>"Vibing Over Venus" by Kevin MacLeod (incompetech.com), CC BY 4.0</li>
@@ -101,7 +101,7 @@ $firebaseToken = $firebaseAuth->createCustomToken((string) $current_user_id)->to
             <li>"Deliberate Thought" by Kevin MacLeod (incompetech.com), CC BY 4.0</li>
             <li>Photo: "Nikola Tesla, with his equipment" (edited), Dickenson V. Alley, 1901, via Wikimedia Commons / Wellcome Collection, CC BY 4.0</li>
         </ul>
-        <p style="text-align:center;"><a href="https://creativecommons.org/licenses/by/4.0/" style="color:#ffcc00;">creativecommons.org/licenses/by/4.0</a> &middot; <a href="https://creativecommons.org/licenses/by/3.0/" style="color:#ffcc00;">by/3.0</a></p>
+        <p style="text-align:center;"><a href="https://creativecommons.org/licenses/by/4.0/" style="color:<?= $theme['link'] ?>;">creativecommons.org/licenses/by/4.0</a> &middot; <a href="https://creativecommons.org/licenses/by/3.0/" style="color:<?= $theme['link'] ?>;">by/3.0</a></p>
     </details>
 
     
@@ -118,7 +118,7 @@ $firebaseToken = $firebaseAuth->createCustomToken((string) $current_user_id)->to
 <!-- 1. The Welcome Overlay Fixed Backdrop (Includes fade-out exit rule) -->
 <div id="welcomeOverlay" style="
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); display: flex; 
+    background-color: <?= $theme['overlay'] ?>; display: flex; 
     flex-direction: column; justify-content: center; align-items: center;
     z-index: 9999; color: white; font-family: sans-serif;
     transition: opacity 1s ease; opacity: 1; 
@@ -128,7 +128,7 @@ $firebaseToken = $firebaseAuth->createCustomToken((string) $current_user_id)->to
         <h2 style="margin-bottom: 20px;">Welcome to Your Dashboard Portal</h2>
         <p style="margin-bottom: 30px; color: #ccc;">Click below to enter your secure workspace.</p>
         <button id="enterBtn" style="
-            background-color: #007; color: white; border: none;
+            background-color: <?= $theme['enter_bg'] ?>; color: <?= $theme['enter_text'] ?>; border: none;
             padding: 15px 40px; font-size: 18px; font-weight: bold;
             border-radius: 6px; cursor: pointer; transition: transform 0.2s;
         ">Enter Dashboard</button>
