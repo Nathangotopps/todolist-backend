@@ -2,32 +2,34 @@
 
 The PHP/MySQL backend for the shared to-do list. It handles registration, login and sessions, then signs the user into the React app by creating a Firebase custom token.
 
-This is the **backend** repo. The to-do app itself lives in a separate repo: (https://github.com/Nathangotopps/todolist-frontend).
+This is the **backend** repo. The to-do app itself lives in a separate repo: [todolist-frontend](https://github.com/Nathangotopps/todolist-frontend).
 
-**Live demo:** https://yoyin-todo.xo.je (frontend: https://github.com/Nathangotopps/todolist-frontend).
+**Live demo:** https://yoyin-todo.xo.je
 The backend is hosted on InfinityFree's free plan (PHP 8.4, MySQL).
 
 ### Known limitations
 
 - No password reset (free hosting has no outgoing email).
+- Guest accounts are temporary: once a guest logs out, they can't get back to those tasks.
 - Free-tier hosting means limited daily requests and occasional slowness.
 
 ## What it does
 
-- Registration (`index.php`, `process.php`): stores students in MySQL with hashed passwords (`password_hash`)
-- Login and logout (`login.php`, `logout.php`): session-based, using prepared statements and `password_verify`
+- Registration (`index.php`, `process.php`): stores users in MySQL with hashed passwords (`password_hash`). Only a name, email and password are collected.
+- Login and logout (`login.php`, `logout.php`): session-based, using prepared statements and `password_verify`. There is also a guest login that needs no account.
 - Dashboard (`dashboard.php`): after login, creates a Firebase custom token for the user's id and links to the React app as `?token=...&category=...&theme=...`
-- Theme settings (`theme_config.php`) and background music for the pages
+- Themes (`theme_config.php`): three colour themes (`retro`, `cyber`, `slate`) used by every page. The default is set by `$default_theme`, and visitors can switch with the coloured dots in the corner; their choice is remembered in a cookie.
+- Background music on the pages.
 
 ## Requirements
 
-- PHP 8.3 with the **sodium** extension enabled (needed by the Firebase JWT library)
+- PHP 8.3 or newer with the **sodium** extension enabled (needed by the Firebase JWT library)
 - MySQL or MariaDB with the `mysqli` extension
 - [Composer](https://getcomposer.org/)
 - A Firebase project with Authentication and Realtime Database enabled
 - Apache (the setup below is for XAMPP on Windows)
 
-Dependencies are `kreait/firebase-php` 8.x and `firebase/php-jwt`. PHP 8.3 is recommended so that you get versions of both without known vulnerabilities.
+Dependencies are `kreait/firebase-php` 8.x and `firebase/php-jwt`. A current PHP version is recommended so that you get versions of both without known vulnerabilities.
 
 ## Setup
 
@@ -38,7 +40,7 @@ Dependencies are `kreait/firebase-php` 8.x and `firebase/php-jwt`. PHP 8.3 is re
    composer install
    ```
 
-3. **Create the database.** `schema.sql` creates the `school_portal` database and the `pupils` table (name, email, phone number, age, gender, password hash):
+3. **Create the database.** `schema.sql` creates the `school_portal` database and the `pupils` table (name, email, password hash):
    ```bash
    mysql -u root -p < schema.sql
    ```
@@ -53,13 +55,16 @@ Dependencies are `kreait/firebase-php` 8.x and `firebase/php-jwt`. PHP 8.3 is re
    Check it works: opening `http://localhost/MYSQL_work/secure/firebase-service-account.json` in your browser should return **403 Forbidden**.
 
 6. **Configure the connection and URLs.** Database settings (`localhost`, `root`, empty password) are set in `login.php` and `process.php`. Those defaults are fine for local XAMPP only, so use real credentials before hosting. In `dashboard.php`, change `$reactAppUrl` to your deployed frontend URL. All four category links use it.
+   **Keep live credentials out of git:** edit them only in the copies on your server, and keep the repository versions on the local defaults.
 
 7. Open `http://localhost/MYSQL_work/index.php`, register, log in and follow the dashboard links into the React app.
 
 ## Security notes
 
-- Passwords are hashed, queries use prepared statements, and the Firebase key lives outside public access.
+- Passwords are hashed, queries use prepared statements, and the Firebase key lives in the protected `secure/` folder.
+- The registration form collects only the data the app needs (name, email, password).
 - Don't use the default `root` user with an empty password on a real server.
+- Never commit the service account key, real database passwords, or copies of server files that contain them.
 - The Firebase web config used by the React app is public by design. Realtime Database rules are what protect user data.
 
 ## License

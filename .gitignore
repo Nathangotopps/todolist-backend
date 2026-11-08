@@ -4,3 +4,7 @@ secure/*
 .env
 *.log
 Thumbs.db
+firebase-service-account.json
+*-server.php
+/.htaccess
+maintenance.flag

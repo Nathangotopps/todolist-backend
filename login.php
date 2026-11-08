@@ -192,6 +192,9 @@ if ($stmt->fetch()) {
 
         <h4 style="color: <?= $theme['sub'] ?>; margin-top: 30px; margin-bottom: 10px; font-size: 14px; font-weight: normal;">You don't have an account?</h4>
         <a href="index.php" style="color: <?= $theme['accent'] ?>; text-decoration: none; font-weight: bold; font-size: 15px;">Register Now!</a>
+        <p style="margin: 20px 0 0 0; font-size: 12px; color: <?= $theme['sub'] ?>;">
+            A hobby to-do list app. <a href="https://github.com/Nathangotopps/todolist-backend" style="color: <?= $theme['accent'] ?>;">Source code on GitHub</a>.
+        </p>
     </div>
 
     <!-- Inject your existing login scripts right below -->

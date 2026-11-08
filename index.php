@@ -94,24 +94,6 @@ if(isset($_SESSION['user_id'])){
             <h4 style="color: <?= $theme['text'] ?>; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Email Address:</h4>
             <input type="email" name="email" style="width: 100%; padding: 12px; background-color: <?= $theme['input_bg'] ?>; border: 1px solid <?= $theme['input_border'] ?>; border-radius: 6px; color: <?= $theme['text'] ?>; font-size: 16px; outline: none; box-sizing: border-box; margin-bottom: 15px;">
 
-            <h4 style="color: <?= $theme['text'] ?>; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Phone Number:</h4>
-            <input type="tel" name="phone_number" style="width: 100%; padding: 12px; background-color: <?= $theme['input_bg'] ?>; border: 1px solid <?= $theme['input_border'] ?>; border-radius: 6px; color: <?= $theme['text'] ?>; font-size: 16px; outline: none; box-sizing: border-box; margin-bottom: 15px;">
-
-            <div style="display: flex; gap: 15px; margin-bottom: 15px;">
-                <div style="flex: 1;">
-                    <h4 style="color: <?= $theme['text'] ?>; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Age:</h4>
-                    <input type="number" name="age" style="width: 100%; padding: 12px; background-color: <?= $theme['input_bg'] ?>; border: 1px solid <?= $theme['input_border'] ?>; border-radius: 6px; color: <?= $theme['text'] ?>; font-size: 16px; outline: none; box-sizing: border-box;">
-                </div>
-                <div style="flex: 1.5; text-align: left;">
-                    <h4 style="color: <?= $theme['text'] ?>; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Gender:</h4>
-                    <div style="display: flex; gap: 10px; align-items: center; margin-top: 12px;">
-                        <input type="radio" id="male" name="gender" value="male"><label for="male" style="font-size:14px; cursor:pointer;">Male</label>
-                        <input type="radio" id="female" name="gender" value="female"><label for="female" style="font-size:14px; cursor:pointer;">Female</label>
-                        <input type="radio" id="other" name="gender" value="other"><label for="other" style="font-size:14px; cursor:pointer;">Other</label>
-                    </div>
-                </div>
-            </div>
-
             <h4 style="color: <?= $theme['text'] ?>; margin: 0 0 6px 0; font-size: 14px; font-weight: normal;">Password:</h4>
             <div style="display: flex; gap: 10px; width: 100%; align-items: center; margin-bottom: 25px; box-sizing: border-box;">
                 <input type="password" id="regPassword" name="password" style="flex: 1; padding: 12px; background-color: <?= $theme['input_bg'] ?>; border: 1px solid <?= $theme['input_border'] ?>; border-radius: 6px; color: <?= $theme['text'] ?>; font-size: 16px; outline: none; box-sizing: border-box;">
@@ -127,6 +109,10 @@ if(isset($_SESSION['user_id'])){
             <h4 style="color: <?= $theme['sub'] ?>; margin: 0 0 8px 0; font-size: 14px; font-weight: normal;">Already have an account?</h4>
             <a href="login.php" style="color: <?= $theme['accent'] ?>; text-decoration: none; font-weight: bold; font-size: 15px;">Log In here</a>
         </div>
+        <p style="margin: 20px 0 0 0; font-size: 12px; text-align: center; color: <?= $theme['sub'] ?>;">
+            A hobby to-do list app. Only a name, email and password are collected here.
+            <a href="https://github.com/Nathangotopps/todolist-backend" style="color: <?= $theme['accent'] ?>;">Source code on GitHub</a>.
+        </p>
     </div>
 
 
